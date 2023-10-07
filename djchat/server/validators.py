@@ -1,6 +1,7 @@
-from PIL import Image
-from django.core.exceptions import ValidationError
 import os
+
+from django.core.exceptions import ValidationError
+from PIL import Image
 
 
 def validate_icon_image_size(image):
@@ -10,8 +11,8 @@ def validate_icon_image_size(image):
                 raise ValidationError(
                     f"The maximum allowed dimensions for the image are 70x70. You uploaded: {img.size}"
                 )
- 
-            
+
+
 def validate_image_file_extension(value):
     ext = os.path.splitext(value.name)[1]
     allowed_ext = [".jpg", ".jpeg", ".gif", ".png"]

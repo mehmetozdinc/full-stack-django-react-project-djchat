@@ -1,10 +1,12 @@
-from rest_framework import viewsets
-from .models import Server
-from .serializer import ServerSerializer
-from rest_framework.response import Response
-from rest_framework.exceptions import ValidationError, AuthenticationFailed
 from django.db.models import Count
+from rest_framework import viewsets
+from rest_framework.exceptions import AuthenticationFailed, ValidationError
+from rest_framework.response import Response
+
+from .models import Server
 from .schema import server_list_docs
+from .serializer import ServerSerializer
+
 
 class ServerListViewSet(viewsets.ViewSet):
     # Initial queryset to retrieve all Server objects
@@ -93,7 +95,7 @@ class ServerListViewSet(viewsets.ViewSet):
         # Annotate queryset with the number of members if requested
         if with_num_members:
             self.queryset = self.queryset.annotate(num_members=Count("member"))
-        
+
         # Limit queryset results based on qty parameter
         if qty:
             self.queryset = self.queryset[: int(qty)]

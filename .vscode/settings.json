@@ -1,5 +1,5 @@
 {
-    "editor.defaultFormatter": null,
+    "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnSave": true,
     "python.formatting.provider": "none",
     "python.formatting.blackArgs": [
