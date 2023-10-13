@@ -11,12 +11,21 @@
     "python.linting.flake8Enabled": true,
     "python.linting.flake8Args": [
         "--max-line-length",
-        "200",
+        "100",
     ],
     "[python]": {
         "editor.codeActionsOnSave": {
             "source.organizeImports": true
         },
         "editor.defaultFormatter": "ms-python.black-formatter"
-    }
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[typescriptreact]": {
+        "editor.formatOnSave": true
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
 }
